@@ -2,58 +2,69 @@
 
 @section('content')
 
-<div class="container mt-5">
+<div class="row justify-content-center">
 
-    <h1>Create User</h1>
+    <div class="col-md-7">
 
-    <form action="{{ route('users.store') }}" method="POST">
+        <div class="card shadow border-0 rounded-4 p-5">
 
-        @csrf
+            <h2 class="fw-bold mb-4 text-primary">
+                Tambah User
+            </h2>
 
-        <div class="mb-3">
-            <label for="name" class="form-label">
-                Name
-            </label>
+            <form action="{{ route('users.store') }}"
+                  method="POST">
 
-            <input type="text"
-                   class="form-control"
-                   id="name"
-                   name="name"
-                   required>
+                @csrf
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-semibold">
+                        Nama
+                    </label>
+
+                    <input type="text"
+                           name="name"
+                           class="form-control form-control-lg rounded-4"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-semibold">
+                        Email
+                    </label>
+
+                    <input type="email"
+                           name="email"
+                           class="form-control form-control-lg rounded-4"
+                           required>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+                        Password
+                    </label>
+
+                    <input type="password"
+                           name="password"
+                           class="form-control form-control-lg rounded-4"
+                           required>
+
+                </div>
+
+                <button class="btn btn-primary btn-lg rounded-pill px-5">
+                    Simpan User
+                </button>
+
+            </form>
+
         </div>
 
-        <div class="mb-3">
-            <label for="email" class="form-label">
-                Email
-            </label>
-
-            <input type="email"
-                   class="form-control"
-                   id="email"
-                   name="email"
-                   required>
-        </div>
-
-        <div class="mb-3">
-            <label for="password" class="form-label">
-                Password
-            </label>
-
-            <input type="password"
-                   class="form-control"
-                   id="password"
-                   name="password"
-                   required>
-        </div>
-
-        <button type="submit"
-                class="btn btn-primary">
-
-            Create User
-
-        </button>
-
-    </form>
+    </div>
 
 </div>
 
